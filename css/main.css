@@ -51,6 +51,27 @@ html, body {
 }
 
 /*** html, body에 overflow:hidden + height: 100%를 지정하면 버벅거림이 없어진다는 얘기가 있는데.....height:100%를 하면 사파리에서 푸터가 안나온다 ㅠㅠ 어쩌죠..? ***/
+@font-face {
+  font-family: 'LotteMartDream';
+  font-style: normal;
+  font-weight: 500;
+  src: url("http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2") format("woff2"), url("http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'LotteMartDream';
+  font-style: normal;
+  font-weight: 700;
+  src: url("http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2") format("woff2"), url("http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: 'LotteMartDream';
+  font-style: normal;
+  font-weight: 400;
+  src: url("http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2") format("woff2"), url("http://cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff") format("woff");
+}
+
 html {
   font-size: 10px;
 }
@@ -83,10 +104,7 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.header .header__title {
-  color: #fff;
+  height: 100vh;
 }
 
 .header .gnb {
@@ -120,6 +138,25 @@ html {
   width: 80%;
 }
 
+.header .header__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 2rem;
+  color: #fff;
+  font-family: LotteMartDream;
+  font-size: 5rem;
+  text-shadow: 0 0 17px rgba(0, 0, 0, 0.5), 0 0 5px rgba(27, 188, 255, 0.8);
+}
+
 .header .header__image {
   position: absolute;
   top: 0;
@@ -128,9 +165,16 @@ html {
   left: 0;
   height: 100vh;
   width: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.header .header__image div {
+  width: 105%;
+  height: 105%;
+  margin: -5% 0 0 -5%;
   background: url(../images/main_sky.jpg) no-repeat center center;
   background-size: cover;
-  z-index: -1;
   -webkit-filter: blur(0.15em);
   filter: blur(0.15em);
 }
